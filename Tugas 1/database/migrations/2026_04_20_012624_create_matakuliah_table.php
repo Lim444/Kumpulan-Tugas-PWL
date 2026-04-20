@@ -10,6 +10,7 @@ return new class extends Migration
             $table->char('kode_matakuliah', 8)->primary();
             $table->string('nama_matakuliah', 50);
             $table->integer('sks');
+            $table->timestamps();
         });
     }
     public function down(): void

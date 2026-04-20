@@ -9,8 +9,10 @@ return new class extends Migration
     {
         Schema::create('mahasiswa', function (Blueprint $table) {
             $table->char('npm', 10)->primary();
-            $table->char('nidn', 10)->references('nidn')->on('dosen')->onDelete('cascade');
+            $table->char('nidn', 10);
+            $table->foreign('nidn')->references('nidn')->on('dosen')->onDelete('cascade');
             $table->string('nama', 50);
+            $table->timestamps();
         });
     }
     public function down(): void

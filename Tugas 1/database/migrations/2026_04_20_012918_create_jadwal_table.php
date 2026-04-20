@@ -8,11 +8,13 @@ return new class extends Migration
     {
         Schema::create('jadwal', function (Blueprint $table) {
             $table->id();
-            $table->char('kode_matakuliah', 8)->references('kode_matakuliah')->on('matakuliah')->onDelete('cascade');
-            $table->char('nidn', 10)->references('nidn')->on('dosen')->onDelete('cascade');
+            $table->char('kode_matakuliah', 8);
+            $table->foreign('kode_matakuliah')->references('kode_matakuliah')->on('matakuliah')->onDelete('cascade');
+            $table->char('nidn', 10);
+            $table->foreign('nidn')->references('nidn')->on('dosen')->onDelete('cascade');
             $table->char('kelas', 1);
             $table->string('hari', 10);
-            $table->timestamps('jam');
+            $table->time('jam');
             $table->timestamps();
         });
     }
