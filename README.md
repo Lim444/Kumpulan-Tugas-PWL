@@ -16,6 +16,6 @@ Repositori untuk mengumpulkan tugas-tugas Pemrograman Web Lanjut (PWL).
 
 ## 🛠️ Teknologi
 
-- HTML/CSS
-- JavaScript
+- Blade
+- PHP
 - Laravel
