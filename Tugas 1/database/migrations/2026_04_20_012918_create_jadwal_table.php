@@ -1,0 +1,23 @@
+<?php
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+return new class extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('jadwal', function (Blueprint $table) {
+            $table->id();
+            $table->char('kode_matakuliah', 8)->references('kode_matakuliah')->on('matakuliah')->onDelete('cascade');
+            $table->char('nidn', 10)->references('nidn')->on('dosen')->onDelete('cascade');
+            $table->char('kelas', 1);
+            $table->string('hari', 10);
+            $table->timestamps('jam');
+            $table->timestamps();
+        });
+    }
+    public function down(): void
+    {
+        Schema::dropIfExists('jadwal');
+    }
+};
