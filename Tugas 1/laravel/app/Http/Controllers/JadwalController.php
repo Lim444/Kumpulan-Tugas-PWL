@@ -29,8 +29,8 @@ class JadwalController extends Controller
             'nidn' => 'required|string|max:10|exists:dosen,nidn',
             'kelas' => 'required|string|in:A,B,C,D',
             'hari' => 'required|string|in:Senin,Selasa,Rabu,Kamis,Jumat,Sabtu',
-            'jam' => 'required|date_format:H:i|after_or_equal:08:00|before_or_equal:20:00',
-            'jam_selesai' => 'required|date_format:H:i|after_or_equal:08:00|before_or_equal:20:00',
+            'jam_mulai' => 'required|date_format:H:i|after_or_equal:08:00|before_or_equal:20:00',
+            'jam_selesai' => 'required|date_format:H:i|after:jam_mulai|after_or_equal:08:00|before_or_equal:20:00',
         ]);
 
         Jadwal::create($request->all());
@@ -52,12 +52,12 @@ class JadwalController extends Controller
             'nidn' => 'required|string|max:10|exists:dosen,nidn',
             'kelas' => 'required|string|in:A,B,C,D',
             'hari' => 'required|string|in:Senin,Selasa,Rabu,Kamis,Jumat,Sabtu',
-            'jam' => 'required|date_format:H:i|after_or_equal:08:00|before_or_equal:20:00',
-            'jam_selesai' => 'required|date_format:H:i|after_or_equal:08:00|before_or_equal:20:00',
+            'jam_mulai' => 'required|date_format:H:i|after_or_equal:08:00|before_or_equal:20:00',
+            'jam_selesai' => 'required|date_format:H:i|after:jam_mulai|after_or_equal:08:00|before_or_equal:20:00',
         ]);
 
         $jadwal = Jadwal::findOrFail($id);
-        $jadwal->update($request->only('kode_matakuliah', 'nidn', 'kelas', 'hari', 'jam', 'jam_selesai'));
+        $jadwal->update($request->only('kode_matakuliah', 'nidn', 'kelas', 'hari', 'jam_mulai', 'jam_selesai'));
         return redirect()->route('jadwal.index')->with('success', 'Jadwal berhasil diperbarui');
     }
 

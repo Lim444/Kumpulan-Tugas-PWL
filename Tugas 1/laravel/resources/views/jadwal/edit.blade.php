@@ -55,8 +55,8 @@
         </div>
         <div class="mb-4">
             <label class="block text-gray-700 font-bold mb-2">Jam Mulai</label>
-<input type="time" name="jam" value="{{ $jadwal->jam }}" min="08:00" max="20:00" step="60" class="w-full border rounded px-3 py-2 text-gray-900 bg-white" required>
-            @error('jam')<p class="text-red-500 text-sm mt-1">{{ $message }}</p>@enderror
+<input type="time" name="jam_mulai" value="{{ $jadwal->jam_mulai }}" min="08:00" max="20:00" step="60" class="w-full border rounded px-3 py-2 text-gray-900 bg-white" required>
+            @error('jam_mulai')<p class="text-red-500 text-sm mt-1">{{ $message }}</p>@enderror
         </div>
         <div class="mb-4">
             <label class="block text-gray-700 font-bold mb-2">Jam Selesai</label>

@@ -30,7 +30,7 @@
                 <td class="border px-4 py-2">{{ $j->dosen->nama ?? '-' }}</td>
                 <td class="border px-4 py-2">{{ $j->kelas }}</td>
                 <td class="border px-4 py-2">{{ $j->hari }}</td>
-                <td class="border px-4 py-2">{{ $j->jam }}</td>
+<td class="border px-4 py-2">{{ $j->jam_mulai }}</td>
                 <td class="border px-4 py-2">{{ $j->jam_selesai ?? '-' }}</td>
                 <td class="border px-4 py-2 text-center space-x-2">
                     <a href="{{ route('jadwal.edit', $j->id) }}" class="bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600">Edit</a>

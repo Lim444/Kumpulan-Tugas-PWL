@@ -16,7 +16,8 @@ return new class extends Migration
             $table->foreign('nidn')->references('nidn')->on('dosen')->onDelete('cascade');
             $table->char('kelas', 1);
             $table->string('hari', 10);
-            $table->time('jam');
+            $table->time('jam_mulai');
+            $table->time('jam_selesai');
             $table->timestamps();
         });
     }
