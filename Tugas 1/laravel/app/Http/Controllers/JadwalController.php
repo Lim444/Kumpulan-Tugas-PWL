@@ -25,11 +25,12 @@ class JadwalController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'kode_matakuliah' => 'required|string|size:8|exists:matakuliah,kode_matakuliah',
-            'nidn' => 'required|string|size:10|exists:dosen,nidn',
-            'kelas' => 'required|string|size:1',
-            'hari' => 'required|string|max:10',
-            'jam' => 'required',
+            'kode_matakuliah' => 'required|string|max:8|exists:matakuliah,kode_matakuliah',
+            'nidn' => 'required|string|max:10|exists:dosen,nidn',
+            'kelas' => 'required|string|in:A,B,C,D',
+            'hari' => 'required|string|in:Senin,Selasa,Rabu,Kamis,Jumat,Sabtu',
+            'jam' => 'required|date_format:H:i|after_or_equal:08:00|before_or_equal:20:00',
+            'jam_selesai' => 'required|date_format:H:i|after_or_equal:08:00|before_or_equal:20:00',
         ]);
 
         Jadwal::create($request->all());
@@ -47,15 +48,16 @@ class JadwalController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'kode_matakuliah' => 'required|string|size:8|exists:matakuliah,kode_matakuliah',
-            'nidn' => 'required|string|size:10|exists:dosen,nidn',
-            'kelas' => 'required|string|size:1',
-            'hari' => 'required|string|max:10',
-            'jam' => 'required',
+            'kode_matakuliah' => 'required|string|max:8|exists:matakuliah,kode_matakuliah',
+            'nidn' => 'required|string|max:10|exists:dosen,nidn',
+            'kelas' => 'required|string|in:A,B,C,D',
+            'hari' => 'required|string|in:Senin,Selasa,Rabu,Kamis,Jumat,Sabtu',
+            'jam' => 'required|date_format:H:i|after_or_equal:08:00|before_or_equal:20:00',
+            'jam_selesai' => 'required|date_format:H:i|after_or_equal:08:00|before_or_equal:20:00',
         ]);
 
         $jadwal = Jadwal::findOrFail($id);
-        $jadwal->update($request->only('kode_matakuliah', 'nidn', 'kelas', 'hari', 'jam'));
+        $jadwal->update($request->only('kode_matakuliah', 'nidn', 'kelas', 'hari', 'jam', 'jam_selesai'));
         return redirect()->route('jadwal.index')->with('success', 'Jadwal berhasil diperbarui');
     }
 

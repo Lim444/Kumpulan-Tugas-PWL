@@ -10,12 +10,12 @@
         @csrf
         <div class="mb-4">
             <label class="block text-gray-700 font-bold mb-2">NIDN</label>
-            <input type="text" name="nidn" maxlength="10" class="w-full border rounded px-3 py-2" required>
+<input type="text" name="nidn" maxlength="10" class="w-full border rounded px-3 py-2 text-gray-900 bg-white" required>
             @error('nidn')<p class="text-red-500 text-sm mt-1">{{ $message }}</p>@enderror
         </div>
         <div class="mb-4">
             <label class="block text-gray-700 font-bold mb-2">Nama</label>
-            <input type="text" name="nama" maxlength="50" class="w-full border rounded px-3 py-2" required>
+<input type="text" name="nama" maxlength="50" class="w-full border rounded px-3 py-2 text-gray-900 bg-white" required>
             @error('nama')<p class="text-red-500 text-sm mt-1">{{ $message }}</p>@enderror
         </div>
         <div class="flex justify-between">

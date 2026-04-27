@@ -23,8 +23,8 @@ class MahasiswaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'npm' => 'required|string|size:10|unique:mahasiswa,npm',
-            'nidn' => 'required|string|size:10|exists:dosen,nidn',
+            'npm' => 'required|string|max:10|unique:mahasiswa,npm',
+            'nidn' => 'required|string|max:10|exists:dosen,nidn',
             'nama' => 'required|string|max:50',
         ]);
 
@@ -42,7 +42,7 @@ class MahasiswaController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'nidn' => 'required|string|size:10|exists:dosen,nidn',
+            'nidn' => 'required|string|max:10|exists:dosen,nidn',
             'nama' => 'required|string|max:50',
         ]);
 

@@ -10,17 +10,17 @@
         @csrf
         <div class="mb-4">
             <label class="block text-gray-700 font-bold mb-2">Kode Matakuliah</label>
-            <input type="text" name="kode_matakuliah" maxlength="8" class="w-full border rounded px-3 py-2" required>
+<input type="text" name="kode_matakuliah" maxlength="8" class="w-full border rounded px-3 py-2 text-gray-900 bg-white" required>
             @error('kode_matakuliah')<p class="text-red-500 text-sm mt-1">{{ $message }}</p>@enderror
         </div>
         <div class="mb-4">
             <label class="block text-gray-700 font-bold mb-2">Nama Matakuliah</label>
-            <input type="text" name="nama_matakuliah" maxlength="50" class="w-full border rounded px-3 py-2" required>
+<input type="text" name="nama_matakuliah" maxlength="50" class="w-full border rounded px-3 py-2 text-gray-900 bg-white" required>
             @error('nama_matakuliah')<p class="text-red-500 text-sm mt-1">{{ $message }}</p>@enderror
         </div>
         <div class="mb-4">
             <label class="block text-gray-700 font-bold mb-2">SKS</label>
-            <input type="number" name="sks" min="1" max="6" class="w-full border rounded px-3 py-2" required>
+<input type="number" name="sks" min="1" max="6" class="w-full border rounded px-3 py-2 text-gray-900 bg-white" required>
             @error('sks')<p class="text-red-500 text-sm mt-1">{{ $message }}</p>@enderror
         </div>
         <div class="flex justify-between">

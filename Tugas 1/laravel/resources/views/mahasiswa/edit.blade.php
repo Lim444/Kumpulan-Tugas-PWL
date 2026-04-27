@@ -11,16 +11,16 @@
         @method('PUT')
         <div class="mb-4">
             <label class="block text-gray-700 font-bold mb-2">NPM</label>
-            <input type="text" value="{{ $mahasiswa->npm }}" class="w-full border rounded px-3 py-2 bg-gray-100" disabled>
+<input type="text" value="{{ $mahasiswa->npm }}" class="w-full border rounded px-3 py-2 bg-gray-100 text-gray-900" disabled>
         </div>
         <div class="mb-4">
             <label class="block text-gray-700 font-bold mb-2">Nama</label>
-            <input type="text" name="nama" value="{{ $mahasiswa->nama }}" maxlength="50" class="w-full border rounded px-3 py-2" required>
+<input type="text" name="nama" value="{{ $mahasiswa->nama }}" maxlength="50" class="w-full border rounded px-3 py-2 text-gray-900 bg-white" required>
             @error('nama')<p class="text-red-500 text-sm mt-1">{{ $message }}</p>@enderror
         </div>
         <div class="mb-4">
             <label class="block text-gray-700 font-bold mb-2">Dosen Wali</label>
-            <select name="nidn" class="w-full border rounded px-3 py-2" required>
+<select name="nidn" class="w-full border rounded px-3 py-2 text-gray-900 bg-white" required>
                 <option value="">-- Pilih Dosen --</option>
                 @foreach($dosens as $dosen)
                 <option value="{{ $dosen->nidn }}" {{ $mahasiswa->nidn == $dosen->nidn ? 'selected' : '' }}>{{ $dosen->nidn }} - {{ $dosen->nama }}</option>

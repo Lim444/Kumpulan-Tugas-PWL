@@ -10,7 +10,7 @@
         @csrf
         <div class="mb-4">
             <label class="block text-gray-700 font-bold mb-2">Mahasiswa</label>
-            <select name="npm" class="w-full border rounded px-3 py-2" required>
+<select name="npm" class="w-full border rounded px-3 py-2 text-gray-900 bg-white" required>
                 <option value="">-- Pilih Mahasiswa --</option>
                 @foreach($mahasiswas as $mhs)
                 <option value="{{ $mhs->npm }}">{{ $mhs->npm }} - {{ $mhs->nama }}</option>
@@ -20,7 +20,7 @@
         </div>
         <div class="mb-4">
             <label class="block text-gray-700 font-bold mb-2">Matakuliah</label>
-            <select name="kode_matakuliah" class="w-full border rounded px-3 py-2" required>
+<select name="kode_matakuliah" class="w-full border rounded px-3 py-2 text-gray-900 bg-white" required>
                 <option value="">-- Pilih Matakuliah --</option>
                 @foreach($matakuliahs as $mk)
                 <option value="{{ $mk->kode_matakuliah }}">{{ $mk->kode_matakuliah }} - {{ $mk->nama_matakuliah }}</option>

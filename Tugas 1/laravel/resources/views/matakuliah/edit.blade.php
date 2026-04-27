@@ -11,16 +11,16 @@
         @method('PUT')
         <div class="mb-4">
             <label class="block text-gray-700 font-bold mb-2">Kode Matakuliah</label>
-            <input type="text" value="{{ $matakuliah->kode_matakuliah }}" class="w-full border rounded px-3 py-2 bg-gray-100" disabled>
+<input type="text" value="{{ $matakuliah->kode_matakuliah }}" class="w-full border rounded px-3 py-2 bg-gray-100 text-gray-900" disabled>
         </div>
         <div class="mb-4">
             <label class="block text-gray-700 font-bold mb-2">Nama Matakuliah</label>
-            <input type="text" name="nama_matakuliah" value="{{ $matakuliah->nama_matakuliah }}" maxlength="50" class="w-full border rounded px-3 py-2" required>
+<input type="text" name="nama_matakuliah" value="{{ $matakuliah->nama_matakuliah }}" maxlength="50" class="w-full border rounded px-3 py-2 text-gray-900 bg-white" required>
             @error('nama_matakuliah')<p class="text-red-500 text-sm mt-1">{{ $message }}</p>@enderror
         </div>
         <div class="mb-4">
             <label class="block text-gray-700 font-bold mb-2">SKS</label>
-            <input type="number" name="sks" value="{{ $matakuliah->sks }}" min="1" max="6" class="w-full border rounded px-3 py-2" required>
+<input type="number" name="sks" value="{{ $matakuliah->sks }}" min="1" max="6" class="w-full border rounded px-3 py-2 text-gray-900 bg-white" required>
             @error('sks')<p class="text-red-500 text-sm mt-1">{{ $message }}</p>@enderror
         </div>
         <div class="flex justify-between">

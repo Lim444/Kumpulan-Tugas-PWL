@@ -25,8 +25,8 @@ class KrsController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'npm' => 'required|string|size:10|exists:mahasiswa,npm',
-            'kode_matakuliah' => 'required|string|size:8|exists:matakuliah,kode_matakuliah',
+            'npm' => 'required|string|max:10|exists:mahasiswa,npm',
+            'kode_matakuliah' => 'required|string|max:8|exists:matakuliah,kode_matakuliah',
         ]);
 
         Krs::create($request->all());
@@ -44,8 +44,8 @@ class KrsController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'npm' => 'required|string|size:10|exists:mahasiswa,npm',
-            'kode_matakuliah' => 'required|string|size:8|exists:matakuliah,kode_matakuliah',
+            'npm' => 'required|string|max:10|exists:mahasiswa,npm',
+            'kode_matakuliah' => 'required|string|max:8|exists:matakuliah,kode_matakuliah',
         ]);
 
         $krsItem = Krs::findOrFail($id);

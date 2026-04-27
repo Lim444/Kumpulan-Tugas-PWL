@@ -21,7 +21,7 @@ class DosenController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nidn' => 'required|string|size:10|unique:dosen,nidn',
+            'nidn' => 'required|string|max:10|unique:dosen,nidn',
             'nama' => 'required|string|max:50',
         ]);
 

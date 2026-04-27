@@ -12,6 +12,7 @@
             <div class="flex items-center justify-between">
                 <a href="/" class="text-xl font-bold">Aplikasi Akademik</a>
                 <div class="space-x-4 text-sm">
+                    <a href="/" class="hover:underline">Beranda</a>
                     <a href="{{ route('dosen.index') }}" class="hover:underline">Dosen</a>
                     <a href="{{ route('mahasiswa.index') }}" class="hover:underline">Mahasiswa</a>
                     <a href="{{ route('matakuliah.index') }}" class="hover:underline">Matakuliah</a>
