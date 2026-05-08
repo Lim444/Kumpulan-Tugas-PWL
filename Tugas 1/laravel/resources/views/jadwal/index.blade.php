@@ -25,7 +25,7 @@
         <tbody>
             @forelse($jadwals as $j)
             <tr class="hover:bg-gray-50">
-                <td class="border px-4 py-2">{{ $loop->iteration }}</td>
+                <td class="border px-4 py-2">{{ $j->id }}</td>
                 <td class="border px-4 py-2">{{ $j->matakuliah->nama_matakuliah ?? '-' }}</td>
                 <td class="border px-4 py-2">{{ $j->dosen->nama ?? '-' }}</td>
                 <td class="border px-4 py-2">{{ $j->kelas }}</td>
